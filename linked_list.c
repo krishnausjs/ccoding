@@ -154,7 +154,6 @@ struct node* BuildWithDummyNode() {
 
 void PrintyList(struct node* head)
 {
-	int i;
 	printf("List contians\n");
 	while(head != NULL) {
 		printf("%d\t",head->data);
@@ -208,7 +207,6 @@ struct node* AppendNodeWithPush(struct node** headRef, int num) {
 		}
 		Push(&(current->next),num);
 	}
-	
 }
 
 struct node* CopyList(struct node *headRef) {
@@ -270,7 +268,7 @@ struct node* CopyListWithRefPtr(struct node *head) {
 } 
 
 int Count(struct node *head, int num) {
-	int i,count = 0;
+	int count = 0;
 	struct node* current = head;
 #ifdef ALTERNATIVE
 	while(current != NULL) {
@@ -327,12 +325,9 @@ void DeleteListTest() {
 
 int Pop(struct node **headRef) {
     //Allocate , Link next , Link head 
-    struct node* current = *headRef;
-    struct node* temp = NULL;
+    struct node* current = *headRef; //Dereference to get the current node
     int return_data = current->data;
-    temp = current->next;
-    temp->data = current->data;
-    *headRef=temp->next;
+    *headRef=current->next; //Advance one level up
     free(current);
     return return_data;
 }
@@ -343,13 +338,14 @@ void PopTest() {
     int b=Pop(&head);
     int c=Pop(&head);
     int len=Length(head);
-    printf("Value of a=%d,b=%d,c=%d and len=%d\n",a,b,c,len)
+    printf("Value of a=%d,b=%d,c=%d and len=%d\n",a,b,c,len);
 }
 
 int main() {
 	struct node *head=NULL;
-	struct node *copyhead=NULL;
+
 #ifdef ID105_Basics
+	struct node *copyhead=NULL;
 	head = (struct node*)malloc(sizeof(struct node));
 	copyhead = (struct node*)malloc(sizeof(struct node));
 	AppendNodeWithPush(&head,30);
