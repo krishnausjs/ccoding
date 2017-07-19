@@ -340,11 +340,28 @@ void PopTest() {
     int len=Length(head);
     printf("Value of a=%d,b=%d,c=%d and len=%d\n",a,b,c,len);
 }
+void InsertNth(struct node **headRef,int index, int data) {
+    struct node* current = *headRef;
+    while(current != NULL) {
+        
+        current = (struct node*)malloc(sizeof(struct node));
+        current->data = data;
+        current=current->next;
+    }    
+    
+    while
+}
 
+void InsertNthTest() {
+    struct node *head;
+    InsertNth(&head,0,13);
+    InsertNth(&head,1,42);
+    InsertNth(&head,1,5);
+    PrintyList(head);
+}
 int main() {
-	struct node *head=NULL;
-
 #ifdef ID105_Basics
+	struct node *head=NULL;
 	struct node *copyhead=NULL;
 	head = (struct node*)malloc(sizeof(struct node));
 	copyhead = (struct node*)malloc(sizeof(struct node));
@@ -376,7 +393,8 @@ int main() {
 	PushTest();
 	WrongPushTest();
 #endif
-    PopTest();
+    InsertNthTest();
+    //PopTest();
  	//CountTest();
 	//GetNthTest();
 	//DeleteListTest();
