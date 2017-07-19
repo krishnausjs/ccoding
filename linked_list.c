@@ -41,7 +41,6 @@ struct node* BuildOneTwoThree() {
 
 struct node* CopyListRecursive(struct node *head) {
 	struct node* current = head;
-	struct node* newList = NULL;
 	if(head == NULL) {
 		return NULL;
 	}
@@ -326,6 +325,27 @@ void DeleteListTest() {
 	DeleteList(&head);
 }
 
+int Pop(struct node **headRef) {
+    //Allocate , Link next , Link head 
+    struct node* current = *headRef;
+    struct node* temp = NULL;
+    int return_data = current->data;
+    temp = current->next;
+    temp->data = current->data;
+    *headRef=temp->next;
+    free(current);
+    return return_data;
+}
+
+void PopTest() {
+    struct node* head = BuildOneTwoThree();
+    int a=Pop(&head);
+    int b=Pop(&head);
+    int c=Pop(&head);
+    int len=Length(head);
+    printf("Value of a=%d,b=%d,c=%d and len=%d\n",a,b,c,len)
+}
+
 int main() {
 	struct node *head=NULL;
 	struct node *copyhead=NULL;
@@ -360,7 +380,8 @@ int main() {
 	PushTest();
 	WrongPushTest();
 #endif
- 	CountTest();
+    PopTest();
+ 	//CountTest();
 	//GetNthTest();
 	//DeleteListTest();
 	return 0;
