@@ -443,6 +443,30 @@ void SortedInsertTest2() {
 	printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
 }
 
+void SortedInsert3(struct node** headRef, struct node* newNode) {
+	struct node** currentRef = headRef;
+	printf("\nEntered %s@%d\n",__FUNCTION__,__LINE__);
+		
+   //Traverse to the node where the current node is less than or equal to new Node
+	while((*currentRef != NULL)&&( (*currentRef)->data < newNode->data)) {
+  		currentRef=&((*currentRef)->next);
+	}
+	// we found the relevant node where we need to place new node next to it
+	newNode->next = *currentRef;  //Make new node next to point to current node
+	*currentRef = newNode;
+	printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
+}
+
+void SortedInsertTest3() {
+	printf("\nEntered %s@%d\n",__FUNCTION__,__LINE__);
+	struct node *head = BuildOneTwoThree();
+	PrintyList(head);
+	struct node *newNode = (struct node*)malloc(sizeof(struct node));
+	newNode->data=13;
+	SortedInsert2(&head,newNode);
+	PrintyList(head);
+	printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
+}
 int main() {
 #ifdef ID105_Basics
 	struct node *head=NULL;
@@ -483,6 +507,7 @@ int main() {
 	//GetNthTest();
 	//DeleteListTest();
 	//SortedInsertTest();
-	SortedInsertTest2();
+	//SortedInsertTest2();
+	SortedInsertTest3();
 	return 0;
 }
