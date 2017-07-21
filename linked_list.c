@@ -23,14 +23,14 @@ void ChangeCaller() {
 
 void PrintyList(struct node* head)
 {
-	printf("\nEntered %s@%d\n",__FUNCTION__,__LINE__);
+	//printf("\nEntered %s@%d\n",__FUNCTION__,__LINE__);
 	printf("List contians\n");
 	while(head != NULL) {
 		printf("%d\t",head->data);
 		head=head->next;
 	}
 	printf("\n");
-	printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
+	//printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
 }
 
 
@@ -105,16 +105,16 @@ void WrongPushTest() {
 void LengthTest() {
 	struct node* myList = BuildOneTwoThree();
 	int len = Length(myList);
-	printf("Value of len is %d\n",len);
+	//printf("Value of len is %d\n",len);
 }
 
 void Push(struct node** headRef,int data) {
-	printf("\nEntered %s@%d\n",__FUNCTION__,__LINE__);
+	//printf("\nEntered %s@%d\n",__FUNCTION__,__LINE__);
 	struct node *newNode = (struct node*)malloc(sizeof(struct node));
 	newNode->data = data;
 	newNode->next = *headRef;
 	*headRef = newNode;
-	printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
+	//printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
 }
 
 void PushTest() {
@@ -145,7 +145,7 @@ struct node* BuildWithSpecialCase() {//+Tail pointer
 		Push(&(tail->next),i);
 		tail = tail->next;
 	}
-	printf("Linked list contains...\n");
+	//printf("Linked list contains...\n");
    while(head != NULL) {
 		printf("%d\n",head->data);
 		head=head->next;
@@ -384,7 +384,7 @@ void InsertNthTest() {
 void SortedInsert(struct node** headRef, struct node* newNode) {
 	struct node* current = *headRef;
 
-	printf("\nEntered %s@%d\n",__FUNCTION__,__LINE__);
+	//printf("\nEntered %s@%d\n",__FUNCTION__,__LINE__);
 		
 	//Special case of head end
 	if( *headRef == NULL || (*headRef)->data >= newNode->data) {
@@ -398,19 +398,19 @@ void SortedInsert(struct node** headRef, struct node* newNode) {
       // we found the relevant node where we need to place new node next to it
 	   newNode->next = current->next;  //Make new node next to point to current node
 	   current->next = newNode;
-	   printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
 	}
+	  // printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
 }
 
 void SortedInsertTest() {
-	printf("\nEntered %s@%d\n",__FUNCTION__,__LINE__);
+	//printf("\nEntered %s@%d\n",__FUNCTION__,__LINE__);
 	struct node *head = BuildOneTwoThree();
 	PrintyList(head);
 	struct node *newNode = (struct node*)malloc(sizeof(struct node));
 	newNode->data=12;
 	SortedInsert(&head,newNode);
 	PrintyList(head);
-	printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
+	//printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
 }
 
 void SortedInsert2(struct node** headRef, struct node* newNode) {
@@ -467,6 +467,37 @@ void SortedInsertTest3() {
 	PrintyList(head);
 	printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
 }
+
+void InsertSort(struct node** headRef) {
+	struct node* current = *headRef; //To iterate over the original list
+	struct node* next;	
+	struct node* result = NULL;
+
+	while(current != NULL) {
+		next=current->next;
+		SortedInsert(&result,current);
+		current=next;
+	}
+	*headRef=result;
+}
+
+void InsertSortTest() {
+	struct node* head = NULL;
+	/*Prepar list*/
+	Push(&head,13);
+	Push(&head,1);
+	Push(&head,40);
+	Push(&head,18);
+	Push(&head,3);
+	Push(&head,2);
+	printf("List Prepared using Push");
+	PrintyList(head);
+	/*Sort List*/
+	InsertSort(&head);	
+	printf("After sorting");
+	PrintyList(head);
+}
+
 int main() {
 #ifdef ID105_Basics
 	struct node *head=NULL;
@@ -508,6 +539,7 @@ int main() {
 	//DeleteListTest();
 	//SortedInsertTest();
 	//SortedInsertTest2();
-	SortedInsertTest3();
+	//SortedInsertTest3();
+	InsertSortTest();
 	return 0;
 }
