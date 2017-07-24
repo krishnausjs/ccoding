@@ -498,6 +498,37 @@ void InsertSortTest() {
 	PrintyList(head);
 }
 
+void Append(struct node **aRef, struct node **bRef) {
+	struct node *current = NULL;
+	
+	if(*aRef == NULL) {
+		*aRef=*bRef;
+	}
+	else {
+		current = *aRef;
+		//Traverse till end of a 
+		while(current->next != NULL) {
+			current=current->next;
+		}
+		current->next = *bRef;
+
+		//Always set this to NULL.
+		*bRef = NULL; 
+	}
+}
+
+void AppendTest() {
+	struct node *a=NULL;
+	struct node *b=NULL;
+   a=BuildOneTwoThree();
+	Push(&b,11);
+	Push(&b,12);
+	Push(&b,13);
+	Append(&a,&b);
+	PrintyList(a);
+	PrintyList(b);
+}
+
 int main() {
 #ifdef ID105_Basics
 	struct node *head=NULL;
@@ -533,13 +564,14 @@ int main() {
 	WrongPushTest();
 #endif
    // InsertNthTest();
-    //PopTest();
+   //PopTest();
  	//CountTest();
 	//GetNthTest();
 	//DeleteListTest();
 	//SortedInsertTest();
 	//SortedInsertTest2();
 	//SortedInsertTest3();
-	InsertSortTest();
+	//InsertSortTest();
+   AppendTest();
 	return 0;
 }
