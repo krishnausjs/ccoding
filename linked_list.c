@@ -31,6 +31,7 @@ void PrintyList(struct node* head)
 	}
 	printf("\n");
 	//printf("\nExiting %s@%d\n",__FUNCTION__,__LINE__);
+	
 }
 
 
@@ -529,6 +530,47 @@ void AppendTest() {
 	PrintyList(b);
 }
 
+void FrontBackSplit(struct node* source, struct node** frontRef, struct node** backRef) {
+	int count=0,i=0;
+	struct node* current=source;
+	struct node* front=*frontRef;
+	struct node* back=*backRef;
+	int hopCount;
+	
+	count=Length(source);
+	printf("We have %d elements in source list\n",count);
+
+	hopCount=(count-1)/2;
+
+	for(i=0;i<hopCount;i++) {
+		current=current->next;
+	}
+
+#if 1	
+	*frontRef=source;
+	*backRef=current->next;
+#else	
+	front=source;
+	back=current->next;		
+#endif
+	current->next=NULL;
+}
+
+void FrontBackSplitTest() {
+	struct node* source=NULL;
+	struct node* front=NULL;
+	struct node* back=NULL;
+	Push(&source,2);
+	Push(&source,3);
+	Push(&source,5);
+	Push(&source,7);
+	Push(&source,11);
+	FrontBackSplit(source,&front,&back);
+	PrintyList(source);
+	PrintyList(front);
+	PrintyList(back);
+}
+
 int main() {
 #ifdef ID105_Basics
 	struct node *head=NULL;
@@ -572,6 +614,7 @@ int main() {
 	//SortedInsertTest2();
 	//SortedInsertTest3();
 	//InsertSortTest();
-   AppendTest();
+   //AppendTest();
+	FrontBackSplitTest();
 	return 0;
 }
