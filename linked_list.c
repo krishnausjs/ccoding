@@ -533,8 +533,6 @@ void AppendTest() {
 void FrontBackSplit(struct node* source, struct node** frontRef, struct node** backRef) {
 	int count=0,i=0;
 	struct node* current=source;
-	struct node* front=*frontRef;
-	struct node* back=*backRef;
 	int hopCount;
 	
 	count=Length(source);
@@ -546,13 +544,8 @@ void FrontBackSplit(struct node* source, struct node** frontRef, struct node** b
 		current=current->next;
 	}
 
-#if 1	
 	*frontRef=source;
 	*backRef=current->next;
-#else	
-	front=source;
-	back=current->next;		
-#endif
 	current->next=NULL;
 }
 
