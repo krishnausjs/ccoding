@@ -549,6 +549,32 @@ void FrontBackSplit(struct node* source, struct node** frontRef, struct node** b
 	current->next=NULL;
 }
 
+void FrontBackSplit2(struct node* source,struct node **frontRef,struct node **backRef) {
+	struct node *fast=NULL;
+	struct node *slow=NULL;
+	struct node *temp=source;
+
+	if((source==NULL)||(source->next==NULL)) { //Checking if there are more than 2 elements
+		*frontRef=source;
+		*backRef=NULL;
+	} else {
+		slow=source;
+		fast=source->next;
+		//Advance fast two times and slow one time
+		while(fast != NULL) {
+			fast=fast->next;
+			if(fast != NULL) {
+				fast=fast->next;
+				slow=slow->next;
+			}
+		}
+		//Now slow is at mid of the list
+		*frontRef=source;
+		*backRef=slow->next;
+		slow->next=NULL;
+	}
+}
+
 void FrontBackSplitTest() {
 	struct node* source=NULL;
 	struct node* front=NULL;
@@ -558,10 +584,44 @@ void FrontBackSplitTest() {
 	Push(&source,5);
 	Push(&source,7);
 	Push(&source,11);
-	FrontBackSplit(source,&front,&back);
+	//FrontBackSplit(source,&front,&back);
+	FrontBackSplit2(source,&front,&back);
 	PrintyList(source);
 	PrintyList(front);
 	PrintyList(back);
+}
+
+void RemoveDuplicates(struct node *head) {
+	struct node* current=head;
+   struct node* nextHead=NULL;
+	if(current == NULL) return;
+	
+	while(current->next != NULL) {
+		if(current->data == current->next->data) {
+			//Delete this node
+			nextHead=current->next->next;
+			free(current->next);
+			current->next=nextHead;
+		} else {
+			if(current != NULL)
+				current=current->next;
+		}
+	}
+
+}
+
+
+void RemoveDuplicatesTest() {
+	struct node* head=NULL;
+	Push(&head,5);
+	Push(&head,5);
+	Push(&head,6);
+	Push(&head,6);
+	Push(&head,7);
+	PrintyList(head);
+	RemoveDuplicates(head);
+	printf("After removing duplicates...\n");
+	PrintyList(head);
 }
 
 int main() {
@@ -608,6 +668,7 @@ int main() {
 	//SortedInsertTest3();
 	//InsertSortTest();
    //AppendTest();
-	FrontBackSplitTest();
+	//FrontBackSplitTest();
+	RemoveDuplicatesTest();
 	return 0;
 }
