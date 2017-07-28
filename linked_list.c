@@ -624,6 +624,31 @@ void RemoveDuplicatesTest() {
 	PrintyList(head);
 }
 
+int MoveNode(struct node** destRef, struct node** sourceRef) {
+	if( *sourceRef == NULL) return -1;
+
+	struct node* newNode=*sourceRef; //the front source node
+	assert(newNode != NULL);
+
+	//*sourceRef=newNode->next;   //Advance the source pointer
+	*sourceRef=(*sourceRef)->next; // Or this is alternative of above line
+	newNode->next=*destRef;
+	*destRef = newNode;
+	return 0;
+}
+
+void MoveNodeTest() {
+	struct node* source=NULL;
+	struct node* dest=NULL;
+
+	source=BuildOneTwoThree();
+	dest=BuildOneTwoThree();
+
+	MoveNode(&dest,&source);
+	PrintyList(source);
+	PrintyList(dest);
+}
+
 int main() {
 #ifdef ID105_Basics
 	struct node *head=NULL;
@@ -669,6 +694,7 @@ int main() {
 	//InsertSortTest();
    //AppendTest();
 	//FrontBackSplitTest();
-	RemoveDuplicatesTest();
+	//RemoveDuplicatesTest();
+	MoveNodeTest();
 	return 0;
 }
