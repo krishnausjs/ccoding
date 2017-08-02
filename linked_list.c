@@ -677,6 +677,76 @@ void AlteringSplitTest() {
    PrintyList(b);
 }
 
+struct node* ShuffleMergeNoMoveNode(struct node *a, struct node *b) {
+	struct node dummy;
+	struct node* tail=&dummy;
+	dummy.next=NULL;
+
+	while(1) {
+		if(a==NULL) {
+			tail->next=b;
+			break;
+		}
+		else if(b==NULL) {
+			tail->next=a;
+			break;
+		}
+		else { //Common case: move two nodes to tail
+			tail->next=a;
+			tail=a;
+			a=a->next;
+
+			tail->next=b;
+			tail=b;
+			b=b->next;
+		}
+	}
+	return(dummy.next);
+}
+
+struct node* ShuffleMergeDummyNode(struct node* a, struct node *b) {
+	struct node dummy;
+	struct node* tail=&dummy;
+	dummy.next=NULL;
+	int i=0;
+	
+	while(1) {
+		if(a==NULL) {
+			tail->next=b;
+			break;
+		}
+		if(b==NULL) {
+			tail->next=a;
+			break;
+		}
+		else {
+			MoveNode(&(tail->next),&a);
+			tail=tail->next;
+			MoveNode(&(tail->next),&b);
+			tail=tail->next;
+         printf("Iteration %d\n",i++);
+			PrintyList(dummy.next);
+		}
+	}
+	return(dummy.next);
+}
+void ShuffleMergeTest() {
+	struct node* a=NULL;
+	struct node* b=NULL;
+	struct node* shuffledList=NULL;
+	Push(&a,1);
+	Push(&a,2);
+	Push(&a,3);
+	Push(&b,11);
+	Push(&b,12);
+	Push(&b,13);
+	//ShuffleMergeTest=ShuffleMergeDummyNode(a,b);
+	shuffledList=ShuffleMergeNoMoveNode(a,b);
+	PrintyList(shuffledList);
+	//PrintyList(a);
+	//PrintyList(b);
+}
+
 
 int main() {
 #ifdef ID105_Basics
@@ -725,6 +795,7 @@ int main() {
 	//FrontBackSplitTest();
 	//RemoveDuplicatesTest();
 	//MoveNodeTest();
-	AlteringSplitTest();
+	//AlteringSplitTest();
+	ShuffleMergeTest();
 	return 0;
 }
