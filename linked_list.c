@@ -730,6 +730,24 @@ struct node* ShuffleMergeDummyNode(struct node* a, struct node *b) {
 	}
 	return(dummy.next);
 }
+
+struct node* ShuffleMergeRecursive(struct node* a,struct node* b) {
+	struct node* result;
+	struct node* recur;
+
+	if(a==NULL) return(b); //see if either list is empty
+	else if(b==NULL) return(a);
+	else {
+		//it turns out to be convenient to do the recurisive call first
+		//otherwise a->next and b->next need temporary storage
+		recur = ShuffleMergeRecursive(a->next,b->next);
+		result = a; //one node from a
+		a->next = b; //one node from b
+		b->next = recur; //then the rest
+		return(result);		
+	}
+
+}
 void ShuffleMergeTest() {
 	struct node* a=NULL;
 	struct node* b=NULL;
@@ -740,8 +758,11 @@ void ShuffleMergeTest() {
 	Push(&b,11);
 	Push(&b,12);
 	Push(&b,13);
+	PrintyList(a);
+	PrintyList(b);
 	//ShuffleMergeTest=ShuffleMergeDummyNode(a,b);
-	shuffledList=ShuffleMergeNoMoveNode(a,b);
+	//shuffledList=ShuffleMergeNoMoveNode(a,b);
+	shuffledList=ShuffleMergeRecursive(a,b);
 	PrintyList(shuffledList);
 	//PrintyList(a);
 	//PrintyList(b);
