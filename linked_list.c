@@ -748,6 +748,29 @@ struct node* ShuffleMergeRecursive(struct node* a,struct node* b) {
 	}
 
 }
+
+struct node* ShuffleMergeLocalRef(struct node* a, struct node* b) {
+	struct node* result = NULL;
+	struct node** lastPtrRef=&result;
+
+	while(1) {
+		if(a==NULL) {
+			*lastPtrRef=b;
+			break;
+		} else if(b==NULL) {
+			*lastPtrRef=a;
+			break;
+		}
+		else {
+			MoveNode(lastPtrRef, &a);
+			lastPtrRef=&((*lastPtrRef)->next);
+			MoveNode(lastPtrRef, &b);
+			lastPtrRef=&((*lastPtrRef)->next);
+		}
+	}
+	return(result);
+}
+
 void ShuffleMergeTest() {
 	struct node* a=NULL;
 	struct node* b=NULL;
@@ -762,7 +785,8 @@ void ShuffleMergeTest() {
 	PrintyList(b);
 	//ShuffleMergeTest=ShuffleMergeDummyNode(a,b);
 	//shuffledList=ShuffleMergeNoMoveNode(a,b);
-	shuffledList=ShuffleMergeRecursive(a,b);
+	//shuffledList=ShuffleMergeRecursive(a,b);
+	shuffledList=ShuffleMergeLocalRef(a,b);
 	PrintyList(shuffledList);
 	//PrintyList(a);
 	//PrintyList(b);
