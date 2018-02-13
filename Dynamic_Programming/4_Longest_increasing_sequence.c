@@ -9,6 +9,7 @@ int _lis(int *arr, int n, int *max_ref)
         printf("Returning when n is 1\n");
         return 1;
     }
+
     int res, max_ending_here=1;
     for(i=1; i<n; i++)
     {
