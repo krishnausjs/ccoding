@@ -14,7 +14,7 @@ int main(void)
     while (token != NULL)
     {
        printf("%s ",token);
-       printf("%d ",len++);
+       printf("%d \n",len++);
        token = strtok(NULL, DELIM);
     }
     printf("\n");

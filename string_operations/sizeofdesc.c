@@ -12,8 +12,9 @@ int main()
 {
     struct_a str;
     unsigned long x;
-    printf("sizze of x is %d\n",sizeof(x));
-    printf("sizze a in structure %x\n",sizeof(str.a));
+    printf("size of x is %ld\n",sizeof(x));
+    printf("size a in structure %x\n",sizeof(str.a));
     printf("Value of ALLIN is %x\n",ALIGN_VALUE(1024,64));
-    printf("sizze is %x\n",sizeof(str));
+    printf("size is %x\n",sizeof(str));
+    return 0;
 }
