@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="Ccoding" Database="" Version="10.0.0">
+  <Project Name="Sample" Path="Sample/Sample.project" Active="No"/>
+  <Project Name="Bit_operations" Path="Bit_operations/Bit_operations.project" Active="No"/>
+  <Project Name="strtok_ex" Path="strtok_ex/strtok_ex.project" Active="No"/>
+  <Project Name="odd_occuring_element" Path="odd_occuring_element/odd_occuring_element.project" Active="No"/>
+  <Project Name="Find_missing_number" Path="Find_missing_number/Find_missing_number.project" Active="No"/>
+  <Project Name="Linked_List_Pair_swap" Path="Linked_List_Pair_swap/Linked_List_Pair_swap.project" Active="No"/>
+  <Project Name="Linked_List_Pair_Swap_Links" Path="Linked_List_Pair_Swap_Links/Linked_List_Pair_Swap_Links.project" Active="No"/>
+  <Project Name="string_operations" Path="string_operations/string_operations.project" Active="No"/>
+  <Project Name="print_longest_line_from_input" Path="print_longest_line_from_input/print_longest_line_from_input.project" Active="No"/>
+  <Project Name="Repeating_Numbers" Path="Repeating_Numbers/Repeating_Numbers.project" Active="No"/>
+  <Project Name="String_Length" Path="String_Length/String_Length.project" Active="No"/>
+  <Project Name="Strtok_impl" Path="Strtok_impl/Strtok_impl.project" Active="No"/>
+  <Project Name="Reorganize_String" Path="Reorganize_String/Reorganize_String.project" Active="No"/>
+  <Project Name="Rocket" Path="Rocket/Rocket.project" Active="No"/>
+  <Project Name="Trees" Path="Trees/Trees.project" Active="No"/>
+  <Project Name="Binary_Trees_cpp" Path="Binary_Trees_cpp/Binary_Trees_cpp.project" Active="No"/>
+  <Project Name="Reversing_Uint" Path="Reversing_Uint/Reversing_Uint.project" Active="No"/>
+  <Project Name="string_reversal" Path="string_reversal/string_reversal.project" Active="No"/>
+  <Project Name="Reverse_Vowels" Path="Reverse_Vowels/Reverse_Vowels.project" Active="No"/>
+  <Project Name="Intersection_of_two_arrays" Path="Intersection_of_two_arrays/Intersection_of_two_arrays.project" Active="No"/>
+  <Project Name="find_max_j_i" Path="find_max_j_i/find_max_j_i.project" Active="No"/>
+  <Project Name="find_max_j_i_2" Path="find_max_j_i_2/find_max_j_i_2.project" Active="No"/>
+  <Project Name="Reverse_linked_list_using_recursion" Path="Reverse_linked_list_using_recursion/Reverse_linked_list_using_recursion.project" Active="No"/>
+  <Project Name="Insert_Node_in_Linked_List" Path="Insert_Node_in_Linked_List/Insert_Node_in_Linked_List.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="Sample" ConfigName="Debug"/>
+      <Project Name="Bit_operations" ConfigName="Debug"/>
+      <Project Name="strtok_ex" ConfigName="Debug"/>
+      <Project Name="odd_occuring_element" ConfigName="Debug"/>
+      <Project Name="Find_missing_number" ConfigName="Debug"/>
+      <Project Name="Linked_List_Pair_swap" ConfigName="Debug"/>
+      <Project Name="Linked_List_Pair_Swap_Links" ConfigName="Debug"/>
+      <Project Name="string_operations" ConfigName="Debug"/>
+      <Project Name="print_longest_line_from_input" ConfigName="Debug"/>
+      <Project Name="Repeating_Numbers" ConfigName="Debug"/>
+      <Project Name="String_Length" ConfigName="Debug"/>
+      <Project Name="Strtok_impl" ConfigName="Debug"/>
+      <Project Name="Reorganize_String" ConfigName="Debug"/>
+      <Project Name="Rocket" ConfigName="Debug"/>
+      <Project Name="Trees" ConfigName="Debug"/>
+      <Project Name="Binary_Trees_cpp" ConfigName="Debug"/>
+      <Project Name="Reversing_Uint" ConfigName="Debug"/>
+      <Project Name="string_reversal" ConfigName="Debug"/>
+      <Project Name="Reverse_Vowels" ConfigName="Debug"/>
+      <Project Name="Intersection_of_two_arrays" ConfigName="Debug"/>
+      <Project Name="find_max_j_i" ConfigName="Debug"/>
+      <Project Name="find_max_j_i_2" ConfigName="Debug"/>
+      <Project Name="Reverse_linked_list_using_recursion" ConfigName="Debug"/>
+      <Project Name="Insert_Node_in_Linked_List" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="yes">
+      <Environment/>
+      <Project Name="Sample" ConfigName="Release"/>
+      <Project Name="Bit_operations" ConfigName="Release"/>
+      <Project Name="strtok_ex" ConfigName="Release"/>
+      <Project Name="odd_occuring_element" ConfigName="Release"/>
+      <Project Name="Find_missing_number" ConfigName="Release"/>
+      <Project Name="Linked_List_Pair_swap" ConfigName="Release"/>
+      <Project Name="Linked_List_Pair_Swap_Links" ConfigName="Release"/>
+      <Project Name="string_operations" ConfigName="Release"/>
+      <Project Name="print_longest_line_from_input" ConfigName="Release"/>
+      <Project Name="Repeating_Numbers" ConfigName="Release"/>
+      <Project Name="String_Length" ConfigName="Release"/>
+      <Project Name="Strtok_impl" ConfigName="Release"/>
+      <Project Name="Reorganize_String" ConfigName="Release"/>
+      <Project Name="Rocket" ConfigName="Release"/>
+      <Project Name="Trees" ConfigName="Release"/>
+      <Project Name="Binary_Trees_cpp" ConfigName="Release"/>
+      <Project Name="Reversing_Uint" ConfigName="Release"/>
+      <Project Name="string_reversal" ConfigName="Release"/>
+      <Project Name="Reverse_Vowels" ConfigName="Release"/>
+      <Project Name="Intersection_of_two_arrays" ConfigName="Release"/>
+      <Project Name="find_max_j_i" ConfigName="Release"/>
+      <Project Name="find_max_j_i_2" ConfigName="Release"/>
+      <Project Name="Reverse_linked_list_using_recursion" ConfigName="Release"/>
+      <Project Name="Insert_Node_in_Linked_List" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>

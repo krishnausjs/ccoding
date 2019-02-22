@@ -27,15 +27,9 @@ int fib(int n)
 
 int main()
 {
-    clock_t begin,end;
-    double time_spent;
     int n = 9;
-    begin = clock();
     initialize(); 
     printf("\n Fibnocci of 9 is %d\n",fib(9));	
-    end = clock();
-    time_spent = (double) (end-begin)/CLOCKS_PER_SEC;
-    printf("Time spent is %lf\n",time_spent);
     return 0;
 }
 
