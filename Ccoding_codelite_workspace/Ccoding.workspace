@@ -23,7 +23,11 @@
   <Project Name="find_max_j_i" Path="find_max_j_i/find_max_j_i.project" Active="No"/>
   <Project Name="find_max_j_i_2" Path="find_max_j_i_2/find_max_j_i_2.project" Active="No"/>
   <Project Name="Reverse_linked_list_using_recursion" Path="Reverse_linked_list_using_recursion/Reverse_linked_list_using_recursion.project" Active="No"/>
-  <Project Name="Insert_Node_in_Linked_List" Path="Insert_Node_in_Linked_List/Insert_Node_in_Linked_List.project" Active="Yes"/>
+  <Project Name="Insert_Node_into_linked_List" Path="Insert_Node_in_Linked_List/Insert_Node_in_Linked_List.project" Active="No"/>
+  <Project Name="Remove_Node_From_Linked_List" Path="Remove_Node_From_Linked_List/Remove_Node_From_Linked_List.project" Active="No"/>
+  <Project Name="Reversing_a_sentence" Path="Reversing_a_sentence/Reversing_a_sentence.project" Active="No"/>
+  <Project Name="File_Read_write" Path="File_Read_write/File_Read_write.project" Active="No"/>
+  <Project Name="count_bits_1_to_n" Path="count_bits_1_to_n/count_bits_1_to_n.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -50,7 +54,11 @@
       <Project Name="find_max_j_i" ConfigName="Debug"/>
       <Project Name="find_max_j_i_2" ConfigName="Debug"/>
       <Project Name="Reverse_linked_list_using_recursion" ConfigName="Debug"/>
-      <Project Name="Insert_Node_in_Linked_List" ConfigName="Debug"/>
+      <Project Name="Insert_Node_into_linked_List" ConfigName="Debug"/>
+      <Project Name="Remove_Node_From_Linked_List" ConfigName="Debug"/>
+      <Project Name="Reversing_a_sentence" ConfigName="Debug"/>
+      <Project Name="File_Read_write" ConfigName="Debug"/>
+      <Project Name="count_bits_1_to_n" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -77,7 +85,11 @@
       <Project Name="find_max_j_i" ConfigName="Release"/>
       <Project Name="find_max_j_i_2" ConfigName="Release"/>
       <Project Name="Reverse_linked_list_using_recursion" ConfigName="Release"/>
-      <Project Name="Insert_Node_in_Linked_List" ConfigName="Release"/>
+      <Project Name="Insert_Node_into_linked_List" ConfigName="Release"/>
+      <Project Name="Remove_Node_From_Linked_List" ConfigName="Release"/>
+      <Project Name="Reversing_a_sentence" ConfigName="Release"/>
+      <Project Name="File_Read_write" ConfigName="Release"/>
+      <Project Name="count_bits_1_to_n" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

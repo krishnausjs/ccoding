@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ Insert_Node_in_Linked_List - Debug ]----------"
-	@cd "Insert_Node_in_Linked_List" && "$(MAKE)" -f  "Insert_Node_in_Linked_List.mk"
+	@echo "----------Building project:[ count_bits_1_to_n - Debug ]----------"
+	@cd "count_bits_1_to_n" && "$(MAKE)" -f  "count_bits_1_to_n.mk"
 clean:
-	@echo "----------Cleaning project:[ Insert_Node_in_Linked_List - Debug ]----------"
-	@cd "Insert_Node_in_Linked_List" && "$(MAKE)" -f  "Insert_Node_in_Linked_List.mk" clean
+	@echo "----------Cleaning project:[ count_bits_1_to_n - Debug ]----------"
+	@cd "count_bits_1_to_n" && "$(MAKE)" -f  "count_bits_1_to_n.mk" clean
