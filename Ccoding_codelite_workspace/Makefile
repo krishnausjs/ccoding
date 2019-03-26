@@ -1,8 +1,8 @@
 .PHONY: clean All
 
 All:
-	@echo "----------Building project:[ count_bits_1_to_n - Debug ]----------"
-	@cd "count_bits_1_to_n" && "$(MAKE)" -f  "count_bits_1_to_n.mk"
+	@echo "----------Building project:[ Read_Columns_c - Debug ]----------"
+	@cd "Read_Columns_c" && "$(MAKE)" -f  "Read_Columns_c.mk"
 clean:
-	@echo "----------Cleaning project:[ count_bits_1_to_n - Debug ]----------"
-	@cd "count_bits_1_to_n" && "$(MAKE)" -f  "count_bits_1_to_n.mk" clean
+	@echo "----------Cleaning project:[ Read_Columns_c - Debug ]----------"
+	@cd "Read_Columns_c" && "$(MAKE)" -f  "Read_Columns_c.mk" clean

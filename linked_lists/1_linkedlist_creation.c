@@ -2,8 +2,8 @@
 #include <stdlib.h>
 
 struct node {
-    int data;
-	struct node* next;	 
+  int data;
+	struct node* next;
 };
 
 struct node* BuildOneTwoThree() {
@@ -26,7 +26,7 @@ struct node* BuildOneTwoThree() {
    third->data=3;
    third->next=NULL;
 
-   return head;     	
+   return head;
 }
 
 int Length(struct node *head) {
@@ -48,12 +48,12 @@ struct node* LinkTest(struct node* current) {
    //Linked list 3 step rule
    //Allocate
    struct node* newNode;
-   newNode=(struct node*)malloc(sizeof(struct node)); 
+   newNode=(struct node*)malloc(sizeof(struct node));
    newNode->data=1;
 
    //Link next
    newNode->next=current;
-  
+
    //Link head
    current=newNode;
    printf("%s:%d Value of new node pointer is %p\n",__FUNCTION__,__LINE__,newNode->next);
@@ -68,8 +68,8 @@ void push(struct node** headRef, int data) {
     *headRef=newNode;
 }
 
-int main() 
-{	
+int main()
+{
    int len=0;
 
    struct node* current = NULL;
@@ -81,7 +81,7 @@ int main()
    printf("Value of len is %d\n",len);
 
    newNode = LinkTest(current);
-   
+
    len=Length(newNode);
 
    //printf("Value of %d node pointer is %p\n",current->next);

@@ -16,7 +16,7 @@ int isBSTUtil(struct node* node, int min, int max)
         return 1;
 
     //Make sure node data is not less than min and gerater than maximum
-    //If so return false     
+    //If so return false
     if(node->data < min || node->data > max)
         return 0;
 

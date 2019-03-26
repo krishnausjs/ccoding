@@ -27,7 +27,9 @@
   <Project Name="Remove_Node_From_Linked_List" Path="Remove_Node_From_Linked_List/Remove_Node_From_Linked_List.project" Active="No"/>
   <Project Name="Reversing_a_sentence" Path="Reversing_a_sentence/Reversing_a_sentence.project" Active="No"/>
   <Project Name="File_Read_write" Path="File_Read_write/File_Read_write.project" Active="No"/>
-  <Project Name="count_bits_1_to_n" Path="count_bits_1_to_n/count_bits_1_to_n.project" Active="Yes"/>
+  <Project Name="count_bits_1_to_n" Path="count_bits_1_to_n/count_bits_1_to_n.project" Active="No"/>
+  <Project Name="fizzbuzz" Path="fizzbuzz/fizzbuzz.project" Active="No"/>
+  <Project Name="Read_Columns_c" Path="Read_Columns_c/Read_Columns_c.project" Active="Yes"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -59,6 +61,8 @@
       <Project Name="Reversing_a_sentence" ConfigName="Debug"/>
       <Project Name="File_Read_write" ConfigName="Debug"/>
       <Project Name="count_bits_1_to_n" ConfigName="Debug"/>
+      <Project Name="fizzbuzz" ConfigName="Debug"/>
+      <Project Name="Read_Columns_c" ConfigName="Debug"/>
     </WorkspaceConfiguration>
     <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
@@ -90,6 +94,8 @@
       <Project Name="Reversing_a_sentence" ConfigName="Release"/>
       <Project Name="File_Read_write" ConfigName="Release"/>
       <Project Name="count_bits_1_to_n" ConfigName="Release"/>
+      <Project Name="fizzbuzz" ConfigName="Release"/>
+      <Project Name="Read_Columns_c" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

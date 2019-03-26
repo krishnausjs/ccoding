@@ -35,7 +35,7 @@ int first(int arr[], int low, int high, int x, int n)
         else
             return first(arr, low, (mid-1), x, n);
     }
-    return -1; 
+    return -1;
 }
 
 int last(int arr[], int low, int high, int x, int n)
@@ -45,7 +45,7 @@ int last(int arr[], int low, int high, int x, int n)
         int mid = (low+high)/2;
         //We check if there are no elements after mid by checking mid==n-1
         //Also we check if arr[mid+1] > x , to make sure that we have reached
-        //the end. Say we have 1,2,2,2,3,3,3,3. If we want to get last occurance of 2 
+        //the end. Say we have 1,2,2,2,3,3,3,3. If we want to get last occurance of 2
         //which is at index 3, we check if 2<arr[4] && arr[3] == 2 which is true.
         //This is a boundry check condition which is quite useful
         if( (mid == n-1) || (x < arr[mid+1]) && arr[mid] == x )
