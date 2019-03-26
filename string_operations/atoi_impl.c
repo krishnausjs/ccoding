@@ -16,11 +16,11 @@ int a_to_i(char s[])
 	}
 
 	for(i = 1; s[i] >= '0' && s[i] <= '9'; ++i)
-		n = n * 10 + (s[i] - '0'); 	
+		n = n * 10 + (s[i] - '0');
 
 	//Return result with sign
 	return sign*n;
-	
+
 }
 
 int main()
@@ -32,10 +32,9 @@ int main()
     result = a_to_i(s);
     printf("\n Input String is converted to %d using custom function\n",result);
 
-	atoi_result = atoi(s);
-	printf("Using actual atoi(Input string), result is %d \n",atoi_result);
+   	atoi_result = atoi(s);
+	  printf("Using actual atoi(Input string), result is %d \n",atoi_result);
 
-	(result == atoi_result) ? printf("Custom atoi passed !!\n") : printf("Custom atoi failed\n");
+	  (result == atoi_result) ? printf("Custom atoi passed !!\n") : printf("Custom atoi failed\n");
     return 0;
 }
-
